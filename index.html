@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCSE Maths Tutoring</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            overflow-x: hidden; /* Disable horizontal scrolling */
+        }
+    
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+    
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+    
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+    
+        .navbar a:hover {
+            color: #0078d7;
+        }
+    
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    
+        .home {
+            background: linear-gradient(to bottom, #6fa3e4, #3a6cb7); /* Lighter blue to darker blue */
+            text-align: center;
+            padding-top: 1rem;
+            color: #fff;
+        }
+    
+        .home h1 {
+            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+    
+        .home p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #f9f9f9;
+        }
+    
+        .about {
+            background-color: #f4f4f4;
+            position: relative;
+            padding: 2rem;
+        }
+    
+        .about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#bfbfbf 1px, transparent 1px);
+            background-size: 10px 10px;
+            opacity: 0.5;
+        }
+    
+        #about-image {
+            width: 750px; /* Adjust the size */
+            height: 500px;
+            object-fit: fill; /* Ensures the image fills the square without distortion */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem; /* Adds space between the text and image */
+        }
+    
+        #me {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 100% 30%;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .about h2 {
+            font-size: 2.4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+    
+        .about .content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+        }
+    
+        .reviews {
+            background: #fff;
+            padding: 2rem;
+            border: 1px solid #d3d3d3;
+        }
+    
+        .pcard strong {
+            color: #005bb5;
+        }
+    
+        .reviews h2 {
+            font-size: 2.4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1.5rem;
+        }
+    
+        .review-card {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    
+        .review-card strong {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    
+        .review-card span {
+            color: #f4c150;
+            font-size: 1.5rem;
+            display: inline-block;
+        }
+    
+        .pricing {
+            background: #fff;
+            padding: 0.2rem 1rem; /* Adjust padding here to reduce space */
+            border: 1px solid #d3d3d3;
+        }
+    
+        .pricing h2 {
+            font-size: 2.4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0;
+        }
+    
+        .review-card {
+            background: #d4d4d4;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+    
+        .review-card strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #0078d7;
+            margin-bottom: 0.5rem;
+        }
+    
+        .review-card p {
+            font-size: 1rem;
+        }
+    
+        .contact {
+            background-color: #f4f4f4;
+            position: relative;
+        }
+    
+ 
+    
+        .contact h2 {
+            font-size: 2.4rem;
+            font-family: 'Playfair Display', serif;
+  
+            position: relative;
+        }
+    
+
+
+    
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #f4f4f4;
+            font-size: 0.9rem;
+        }
+    
+        @media (max-width: 768px) {
+            .home h1 {
+                font-size: 2rem;
+            }
+    
+            .about h2 {
+                font-size: 2rem;
+            }
+    
+            .content p {
+                font-size: 1rem;
+            }
+    
+            #me {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+        AOS.init({
+  duration: 1000,  // Duration of the animation (in ms)
+  once: true,      // Whether the animation happens only once (when scrolled into view)
+});
+
+    </script>
+    <header>
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <a href="#about">About Me</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="home">
+        <h1 data-aos="fade-up">GCSE Maths Tutoring</h1>
+        <p data-aos="fade-up">Helping students in Years 7 to 11 boost their confidence and excel in Maths through personalised lessons.</p>
+    </section>
+
+    <section id="about" class="about">
+        <h2 data-aos="fade-up">About Me</h2>
+        <img src="me.jpg" alt="Photo of Ethan tutoring" data-aos="fade-up", id="me">
+        <div class="content" data-aos="fade-up">
+            <p>Hi, I'm Ethan – a 20-year-old maths tutor and a Mathematics student at Newcastle University. I’ve recently completed my A-Levels with an A* in Maths, and I’m passionate about helping students just like you reach their full potential in GCSE Maths. I believe that every student can excel with the right guidance, and I focus on making complex concepts clear and easy to understand.</p>
+            
+            <p>What sets me apart is my unique approach. I understand that every student learns differently, so I tailor each lesson to your specific needs. Whether you’re looking to master difficult topics, improve exam techniques, or build confidence, I’m here to help. Plus, I’m fully remote, so no matter where you are in the UK, I can provide accessible tutoring sessions right from the comfort of your own home.</p>
+    
+            <p>And the best part? My tutoring services are affordable and accessible. I offer competitive rates to ensure that quality maths support is available to everyone, without breaking the bank. No matter your exam board, I’m familiar with all of them and can help you succeed, no matter what curriculum you’re following.</p>
+    
+            <p>Let me guide you to success in GCSE Maths!</p>
+
+
+        </div>
+        <div class="reasons" data-aos="fade-up">
+            <h3>Why Choose Me?</h3>
+            <ul>
+                <li>🎓 I’m young, so I get it! (I finished my exams not long ago, so I know exactly what you’re going through.)</li>
+                <li>🤝 I’m relatable. (Think of me as your maths mate, not a scary teacher!)</li>
+                <li>🧠 I make maths fun and simple. (Well, as fun as maths can be. Let’s not oversell it, but trust me, you’ll enjoy it!)</li>
+                <li>📚 I’ve been there, done that, and got the 9/A*. (I know what it takes, and I’ll help you get there too.)</li>
+                <li>💻 Flexible, remote sessions. (Learn from the comfort of your bed. I won’t judge!)</li>
+            </ul>
+        </div>
+    </section>
+    
+
+    <section id="pricing" class="pricing">
+        <h2 data-aos="fade-up">Pricing</h2>
+        <div data-aos="fade-up" class="pcard">
+            <strong>£12 an hour</strong>
+            <p>All this, with sessions priced at just £12 – making quality tutoring affordable for everyone!</p>
+
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 data-aos="fade-up">Contact Me</h2>
+        <p data-aos="fade-up">Feel free to reach out for more information or to book a session. I'm here to help you succeed!</p>
+    
+        <!-- Contact Form (Embedded) -->
+        <iframe data-tally-src="https://tally.so/embed/nGXAlz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                loading="lazy" 
+                width="100%" 
+                height="439" 
+                frameborder="0" 
+                marginheight="0" 
+                marginwidth="0" 
+                title="Tutoring"></iframe>
+    
+        <script>
+            var d = document, 
+                w = "https://tally.so/widgets/embed.js", 
+                v = function() {
+                    if (typeof Tally !== "undefined") {
+                        Tally.loadEmbeds();
+                    } else {
+                        d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+                            e.src = e.dataset.tallySrc;
+                        });
+                    }
+                };
+    
+            if (typeof Tally !== "undefined") {
+                v();
+            } else {
+                if (d.querySelector('script[src="' + w + '"]') === null) {
+                    var s = d.createElement("script");
+                    s.src = w;
+                    s.onload = v;
+                    s.onerror = v;
+                    d.body.appendChild(s);
+                }
+            }
+        </script>
+    </section>
+    
+    <section id="reviews" class="reviews">
+        <h2 data-aos="fade-up">Reviews</h2>
+        <div data-aos="fade-up" class="review-card">
+            <span style="color: #f4c150; margin-top: 5px; display: block;">★★★★★</span>
+            <strong>Melissa S</strong>
+           
+            <p>"Excellent! My son found Ethan so helpful. He explained some of the areas he was struggling with really clearly. Great tutor, thanks Ethan!"</p>
+        </div>
+        
+    </section>
+    
+    
+    
+    
+    
+    <footer>
+        &copy; 2025 Ethan's Tutoring. All rights reserved.
+    </footer>
+</body>
+</html>
